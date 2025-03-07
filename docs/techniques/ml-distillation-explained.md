@@ -8,12 +8,12 @@ Distillation is one of the most fascinating techniques in machine learning. Imag
 
 Before understanding distillation, we need to review how artificial neural networks function. 
 
-![Neural Network Structure](neural-network-structure.png)
+![Neural Network Structure](../images/neural-network-structure.png)
 
 An artificial neural network is a mathematical model with computational units called neurons that perform calculations (typically multiplications). These neurons can be arranged in series and parallel, forming different layers. For example, we might have a neural network with 100 layers, each containing 50 neurons, resulting in 5,000 neurons and 252,450 parameters (weights and biases).
 
-![Neural Network Structure function](neural-network-structure-function.png)
-![Prediction formula](prediction-formula.png)
+![Neural Network Structure function](../images/neural-network-structure-function.png)
+![Prediction formula](../images/prediction-formula.png)
 
 ### The Learning Process
 
@@ -21,7 +21,7 @@ Neural networks can be applied to countless problems. The key concept is that ea
 
 For example, in image recognition:
 
-![Image Recognition Process](image-recognition-process.png)
+![Image Recognition Process](../images/image-recognition-process.png)
 
 1. **Input**: When we input an image of a dog, we're actually providing a set of numbers indicating the amount of red, blue, and green in each pixel that together form the image of the dog or cat.
 2. **Processing**: These numbers are processed through the network's parameters.
@@ -33,7 +33,7 @@ During training, the model adjusts its parameters to maximize the score for the 
 
 By definition, artificial neural networks are sub-optimal initially. They start with no knowledge of the world and random initialization, so in the early epochs of training, the model makes many mistakes. It might initially create a unique internal representation for each image, which is inefficient because it doesn't capture similarities between dogs of the same breed photographed from different angles.
 
-![2D Visualization of Latent Space](latent-space.png)
+![2D Visualization of Latent Space](../images/latent-space.png)
 
 As training progresses, the model learns patterns—characteristics related to dogs and cats—and condenses its internal representation. We can imagine different regions of its internal space occupied by different dog breeds and other distant regions occupied by different cat breeds.
 
@@ -41,7 +41,7 @@ By the end of training, when the network performs well, there's a dense internal
 
 ## The Need for Large Models
 
-<!-- ![2D Visualization of Latent Space](latent-space.png) -->
+<!-- ![2D Visualization of Latent Space](../images/latent-space.png) -->
 
 The reason for this technical explanation is to illustrate that if the network didn't have enough representation space in the early epochs, it couldn't learn at all. It wouldn't have the ability to arrange so much information about a world it doesn't know and is learning to operate in.
 
@@ -49,13 +49,13 @@ This principle applies not only to computer vision but also to natural language 
 
 This is one reason why, when dealing with complex problems like modeling language and producing coherent texts in a conversation, networks with many parameters are necessary. They need to learn an enormous quantity of patterns that allow them to be versatile and have appropriate behavior for millions of situations.
 
-![Word Embedding](word-embedding.png)
+![Word Embedding](../images/word-embedding.png)
 
 ### Scaling Laws
 
 Since 2018, there has been scientific evidence that the larger a language model is, the better the quality of its responses. This is related to what was discussed earlier: the larger the model, the more space it has to represent information—potentially information about the entire world, since the training dataset of LLMs covers much of human knowledge.
 
-![Scaling Law](image.png)
+![Scaling Law](../images/image.png)
 
 ## The Problems with Large Models
 
@@ -79,7 +79,7 @@ Similarly, when using distillation, a "genius" model is identified—a model tha
 
 These two models form a "teacher-student" pair, where the teacher is the large model and the student is the small one. The student is trained from the first epoch to reproduce the teacher's output, avoiding the need for all those neurons that would allow it to learn on its own.
 
-![Teacher-Student Model](teacher-student-model.png)
+![Teacher-Student Model](../images/teacher-student-model.png)
 
 ### Practical Implementation
 
@@ -92,7 +92,7 @@ In practice, how this is done depends on who's doing it. Using the previous exam
 ## Summary
 
 
-![Distillation Benefits](distillation-benefits.png)
+![Distillation Benefits](../images/distillation-benefits.png)
 
 Distillation is the technique by which smaller models exist today that perform much better than large models that were available two years ago. This is because each time a large model reached a new standard, improving the state of the art, this high-performing model was used through distillation to obtain a new reduced-size model that surpassed the large model of the previous generation.
 
