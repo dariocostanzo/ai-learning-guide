@@ -55,7 +55,7 @@ This is one reason why, when dealing with complex problems like modeling languag
 
 Since 2018, there has been scientific evidence that the larger a language model is, the better the quality of its responses. This is related to what was discussed earlier: the larger the model, the more space it has to represent information—potentially information about the entire world, since the training dataset of LLMs covers much of human knowledge.
 
-![Scaling Law](../images/image.png)
+![Scaling Law](../images/scaling-law.png)
 
 ## The Problems with Large Models
 
